@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: lightgrey;
+  display: grid;
+
+}
+
+header {
+  display: grid;
+  justify-content: center;
+  background-color: rgb(90, 92, 46);
+  color: white;
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+section {
+  display: grid;
+  grid-template-areas:
+    "favorites"
+    "other"
+    "references";
+
+  justify-content: center;
+}
+
+section > article {
+  display: grid;
+  grid-template-areas: "title" "div";
+  text-align: center;
+}
+
+article > div {
+  display: grid;
+  grid-template-areas: "favoritePicture favoriteText";
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+#references {
+  display: grid;
+  justify-content: center;
+}
+
+img {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.favoritInfo {
+  max-width: 600px;
+  min-width: 150px;
+}
+
+ol {
+  text-align: start;
+  width: 75%;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  --icon-size: 0.8em;
+  --gutter: 0.5em;
+  padding: 0 0 0 var(--icon-size);
+}
+
+ul li {
+  padding-left: var(--gutter);
+}
+
+ul li::marker {
+  content: "\f0a4";
+  font-family: FontAwesome;
+  font-size: var(--icon-size);
+}
+
+footer {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: grey;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#me {
+  animation: rotating 5s linear infinite;
+  display: inline-block;
+}
+
+@media screen and (max-width: 870px) {
+  article > div {
+    display: grid;
+    grid-template-areas: "image" "text";
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  #other {
+    justify-items: center;
+    margin-bottom: 1rem;
+  }
+}
